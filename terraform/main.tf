@@ -2,9 +2,9 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-resource "aws_s3_bucket" "site" {
-  bucket = "poorna-cloud-portfolio-7181"
-}
+#resource "aws_s3_bucket" "site" {
+#  bucket = "poorna-cloud-portfolio-7181"
+#}
 
 resource "aws_s3_bucket_website_configuration" "site" {
   bucket = aws_s3_bucket.site.id
