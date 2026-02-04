@@ -1,12 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket         = "poorna-terraform-state-7181"
-    key            = "portfolio/terraform.tfstate"
-    region         = "ap-south-1"
-    dynamodb_table = "terraform-locks"
-    encrypt        = true
-  }
-}
 
 provider "aws" {
   region = "ap-south-1"
@@ -44,3 +35,13 @@ resource "aws_s3_bucket_policy" "public_policy" {
     }]
   })
 }
+terraform {
+  backend "s3" {
+    bucket         = "poorna-terraform-state-7181"
+    key            = "portfolio/terraform.tfstate"
+    region         = "ap-south-1"
+    dynamodb_table = "terraform-locks"
+    encrypt        = true
+  }
+}
+
